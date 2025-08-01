@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planify</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="contact.js"></script>
+    <style>
+        body {
+            background-color: #fff;
+        }
+        .navbar {
+            background-color: #1f1920;
+            position: relative;
+            height: 110px;
+            width: 100%;
+            z-index: 1000; 
+        }
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            margin-right: 10px; 
+        }
+        .navbar-nav .nav-link,
+        .navbar-brand {
+            color: #663399;
+        }
+        .navbar-toggler {
+            border-color: rgba(255, 255, 255, 0.1); 
+        }
+        .navbar-toggler-icon {
+            background-image: url('data:image/svg+xml;charset=UTF8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="rgba%2863, 34, 101, 1%29" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/%3E%3C/svg%3E');
+        }
+        .contact-section {
+            background: linear-gradient(to right, #ffb3c6, #c8a2c8);
+            padding: 50px 0;
+        }
+        .contact-form {
+            background: #fff; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            color: #663399;
+        }
+        .form-control:focus {
+            border-color: #ffb3c6;
+            box-shadow: none;
+        }
+        .btn-primary {
+            background-color: #ff66b2; 
+            border-color: #ff66b2;
+        }
+        .btn-primary:hover {
+            background-color: #ff4d94; 
+            border-color: #ff4d94;
+        }
+        .social-icons a {
+            color: #663399;
+            margin-right: 10px;
+            font-size: 1.5em;
+        }
+        .social-icons a:hover {
+            color: #ff66b2;
+        }
+    </style>
+</head>
+<body>
+     <!-- Header -->
+     <header>
+        <nav class="navbar navbar-expand-lg navbar-transparent fixed-top">
+              <div class="container-fluid justify-content-evenly">
+                  <div id="logo">
+                <a class="navbar-brand" href="/index.html">
+                  <img src="/images/logo.png" width="200px" height="200px" alt="Planify Logo">
+                </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <div class="navbar-nav">
+                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="/aboutus.html">About</a>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Services</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Traditional Events</a></li>
+                      <li><a class="dropdown-item" href="#">Niche Events</a></li>
+                      <li><a class="dropdown-item" href="#">Professional Events</a></li>
+                      <li><a class="dropdown-item" hre="#">Educational Events</a></li>
+                      <li><a class="dropdown-item" href="#">Outdoor and Adventure Events</a></li>
+                      <li><a class="dropdown-item" href="#">Virtual and Hybrid Events</a></li>
+                      <li><a class="dropdown-item" href="#">Cultural and Lifestyle Events</a></li>
+                      <li><a class="dropdown-item" href="#">Corporate and Customized Solutions</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Custom Events</a></li>
+                    </ul>
+                    </li>
+                   <button type="button" class="btn btn-light">
+                   <a href="/contact.html" target="_blank">Contact us</a></button>
+                  </div>
+                </div>
+              </div>
+            </nav>
+      </header>
+    
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <h2 class="text-center">Contact Us</h2>
+                        <form method="post" action="">
+                            <div id="signUpMessage" class="messageDiv" style="display: none;"></div>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="password" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Your Phone Number">
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-date" class="form-label">Choose event date</label>
+                                <input type="date" class="form-control" id="datepicker">
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-location" class="form-label">Event Location</label>
+                                <input type="text" class="form-control" id="event-location" placeholder="Event Location/Venue" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-type" class="form-label">Event Type</label>
+                                <select class="form-select" name="event-type" id="event-type">
+                                    <option>Click to select event type</option>
+                                    <option value="1">Traditional events</option>
+                                    <option value="2">Niche events</option>
+                                    <option value="1">Professional events</option>
+                                    <option value="1">Educational events</option>
+                                    <option value="1">Outdoor & Adventure events</option>
+                                    <option value="1">Virtual & Hybrid events</option>
+                                    <option value="1">Cultural & Lifestyle events</option>
+                                    <option value="1">Corporate & Customized events</option>
+                                    <option value="1">Custom events</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="number-of-guests" class="form-label">Number of Guests</label>
+                                <input type="number" class="form-control" id="number-of-guests" placeholder="Number of Guests" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="budget-range" class="form-label">Budget Range</label>
+                                <select class="form-select" id="budget-range">
+                                    <option>Low</option>
+                                    <option>Medium</option>
+                                    <option>High</option>
+                                    <option>Custom Amount</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Details*</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="contactMethod" class="form-label">Preferred Contact Method</label>
+                                <select class="form-select" id="contactMethod">
+                                    <option selected>Email</option>
+                                    <option>Phone</option>
+                                    <option>Text message</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="event-services" class="form-label">Event Services Needed</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="venue-selection">
+                                    <label class="form-check-label" for="venue-selection">
+                                        Venue Selection
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="catering">
+                                    <label class="form-check-label" for="catering">
+                                        Catering
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="decoration">
+                                    <label class="form-check-label" for="decoration">
+                                        Decoration
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="entertainment">
+                                    <label class="form-check-label" for="entertainment">
+                                        Entertainment
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="photography-videography">
+                                    <label class="form-check-label" for="photography-videography">
+                                        Photography/Videography
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="invitations">
+                                    <label class="form-check-label" for="invitations">
+                                        Invitations
+                                    </label>
+                                </div>
+                            </div>
+                            <button id="submit" type="submit" class="btn btn-primary w-100">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <section class="sign-in-section">
+                <div class="container" id="signIn">
+                <div class="row justify-content-center">
+                <div class="col-md-6">
+                <div class="sign-in-form"> 
+               <h2 class="text-center">Sign In</h2>
+               <form method="post" action="">
+                <div id="signInMessage" class="messageDiv" style="display: none;"></div> 
+                <style>
+                    .messageDiv {
+                        background-color: #663399;
+                        color: #fff;
+                        padding: 10px 20px;
+                        margin: 10px;
+                        border-radius: 5px;
+                        font-size: 1rem;
+                        opacity: 0;
+                        animation: fadeOut 7s forwards;
+                    }
+                </style>
+               <div class="mb-3"> 
+               <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email" required> </div> 
+               <div class="mb-3"> <label for="password" class="form-label">Password</label> 
+               <input type="password" class="form-control" id="password" placeholder="Your Password" required> </div>
+                <div class="d-grid gap-2"> <button type="button" class="btn btn-primary">Sign In</button>
+               </div> 
+               </form> 
+               <div class="mt-4 text-nter"> <p>Don't have an account? <a href="contact.html">Sign Up</a></p> 
+               </div>
+                </div>
+                </div> 
+               </div> 
+               </div> 
+               </section>
+        </div>
+    </section>
+</body>
+</html>
